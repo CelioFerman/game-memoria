@@ -1,12 +1,12 @@
-export const Cards = ({ id, idPair, images }) => {
+export const Cards = ({ id, idPair, pokemons }) => {
     return (
         <button id={id} className="Cards">
             <div className="card-content">
                 <div className="card-front">
-                    <img src='../assets/pokemon.png' height={300} width={300}/>
+            <img src='../assets/Pokemon.png' alt={`Card Logo`} width={300} height={240}/>
                 </div>
                 <div className="card-back">
-                    <img src={images} alt={`Card ${id}`} width={300} />
+                    <img src={pokemons} alt={`Card ${id}`} width={300} />
                 </div>
             </div>
         </button>
