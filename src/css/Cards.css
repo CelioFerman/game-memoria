@@ -50,7 +50,7 @@
     transform: rotateY(180deg);
 }
 
-.Cards:hover .card-content {
+.faceCards .card-content {
     transform: rotateY(180deg);
 
 }

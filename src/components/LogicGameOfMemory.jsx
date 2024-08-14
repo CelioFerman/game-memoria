@@ -18,12 +18,14 @@ export const LogicGameOfMemoryProvider = ({ children }) => {
 
     const turnCards = ( {id, idPair} ) => {
         increaseCardsTurnedOver();
+        setIdCardsTurnedOver(ids => [...ids, id] );
     }
     
     const values = {
         cards, 
         countCardsTurnedOver,
         CountPoints,
+        idCardsTurnedOver,
         turnCards,
     };
 
