@@ -1,33 +1,42 @@
-import { Scoreboard } from "./components/Scoreboard"
-import { Cards } from "./components/Cards"
-import { pairOfCards } from "./components/Pokemons"
-import { Results } from "./components/Results"
-import { LogicGameOfMemoryProvider } from "./components/LogicGameOfMemory"
+import { Scoreboard } from "./components/Scoreboard";
+import { Cards } from "./components/Cards";
+import { Results } from "./components/Results";
+import { LogicGameOfMemoryProvider } from "./components/LogicGameOfMemory";
+import { useGameOfMemory } from "./hooks/UseGameOfMemory";
+import { useEffect } from "react";
 
-import './css/GameOfMemory.css'
-import './css/Cards.css'
+import "./css/GameOfMemory.css";
+import "./css/Cards.css";
 
 function GameOfMemory() {
-    return (
-        <LogicGameOfMemoryProvider>
-            <GameOfMemoryContent />
-        </LogicGameOfMemoryProvider>
-    );
-};
+  return (
+    <LogicGameOfMemoryProvider>
+      <GameOfMemoryContent />
+    </LogicGameOfMemoryProvider>
+  );
+}
 
 export function GameOfMemoryContent() {
-    return (
+  const { cards, playGame } = useGameOfMemory();
+  
+  useEffect(() => {
+    playGame();
+  }, []);
+
+  return (
     <div className="game-memory">
-        <div className="game-memory-content">
-            <h1>Jogo da Memoria</h1>
-            <Scoreboard />
-            <div className="game-memory-cards">
-                {pairOfCards.map((card) => (<Cards key={card.id} {...card} />))};
-            </div>
+      <div className="game-memory-content">
+        <h1>Jogo da Memoria</h1>
+        <Scoreboard />
+        <div className="game-memory-cards">
+          {cards.map((card) => (
+            <Cards key={card.id} {...card} />
+          ))}
         </div>
-            <Results />
+      </div>
+      <Results />
     </div>
-    );
+  );
 }
 
 export default GameOfMemory;

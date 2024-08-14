@@ -1,8 +1,8 @@
-import { UseGameOfMemory } from "../hooks/UseGameOfMemory";
+import { useGameOfMemory } from "../hooks/UseGameOfMemory";
 import "../css/Scoreboard.css";
 
 export const Scoreboard = () => {
-  const { countCardsTurnedOver, CountPoints } = UseGameOfMemory();
+  const { countCardsTurnedOver, CountPoints } = useGameOfMemory();
 
   return (
     <div className="scoreboard">
