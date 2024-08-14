@@ -17,15 +17,38 @@ export const LogicGameOfMemoryProvider = ({ children }) => {
     };
 
     const turnCards = ( {id, idPair} ) => {
+
         increaseCardsTurnedOver();
-        setIdCardsTurnedOver(ids => [...ids, id] );
-    }
+
+        const cardFaceVisible = idCardsTurnedOver.includes(id);
+        if(cardFaceVisible) {
+            return;
+        }
+
+        if (idCardsTurnedOver.length >= 2) {
+            return; setIdCardsTurnedOver([]);
+        }
+        if (idCardsTurnedOver.length === 0) {
+            return setIdCardsTurnedOver([id])
+
+        }
+        
+        setIdCardsTurnedOver((ids) => [ids[0], id]);
+        
+        const time = 2000;
+
+        setTimeout(() => {
+            setIdCardsTurnedOver([]);
+        }, time)
+    };
+
     
     const values = {
         cards, 
         countCardsTurnedOver,
         CountPoints,
         idCardsTurnedOver,
+        idsPairFound,  
         turnCards,
     };
 

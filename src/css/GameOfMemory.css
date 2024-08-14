@@ -1,8 +1,7 @@
 .game-memory{
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .game-memory-content{
     max-width: 37.5px;
-    margin: 0 auto;
 }

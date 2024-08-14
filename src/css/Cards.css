@@ -1,6 +1,6 @@
 .game-memory-cards{
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 10.8rem);
     gap: 1rem;
 
 }
@@ -40,10 +40,6 @@
     top: 0;
     backface-visibility: hidden;
     --webkit-backface-visibility: hidden;
-}
-
-.card-front {
-    background-color: #bbb;
 }
 
 .card-back {

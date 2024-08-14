@@ -1,6 +1,7 @@
 import cardLogo from "../assets/Pokemon.png";
 import classNames from "classnames";
 import { UseGameOfMemory } from "../hooks/UseGameOfMemory";
+import '../css/Cards.css'
 
 export const Cards = ({ id, png, idPair }) => {
   const { turnCards, idCardsTurnedOver } = UseGameOfMemory();
@@ -8,15 +9,17 @@ export const Cards = ({ id, png, idPair }) => {
     turnCards({ id, idPair });
   };
 
-  const faceCards = idCardsTurnedOver.includes(id);
+  const madePair = idCardsTurnedOver.includes(idPair);
+  const faceCards = madePair ||idCardsTurnedOver.includes(id);
+  const blockClick = faceCards
 
-const cn = classNames('cards', {
+const cn = classNames('Cards', {
     "faceCards": faceCards
 })
 
 
   return (
-    <button id={id} className={cn} onClick={controlClick}>
+    <button id={id} className={cn} onClick={controlClick} disabled={blockClick}>
       <div className="card-content">
         <div className="card-front">
           <img src={cardLogo} alt={`Card Logo`} width={300} height={230} />

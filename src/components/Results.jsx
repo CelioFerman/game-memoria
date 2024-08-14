@@ -1,5 +1,5 @@
-import '../css/Results.css';
 import classNames from "classnames"
+import '../css/Results.css';
 
 const cn = classNames('results', {
     'results-open': false
