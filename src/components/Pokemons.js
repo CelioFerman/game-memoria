@@ -1,111 +1,212 @@
-const pokemons = [
-    '../assets/Abra.png',
-    '../assets/Alakazam.png',
-    // '../assets/Arbok.png',
-    // '../assets/Arcanine.png',
-    // '../assets/Beedrill.png',
-    // '../assets/Bellsprout.png',
-    // '../assets/Blastoise.png',
-    // '../assets/Bulbasaur.png',
-    // '../assets/Butterfree.png',
-    // '../assets/Caterpie.png',
-    // '../assets/Charizard.png',
-    // '../assets/Charmander.png',
-    // '../assets/Charmeleon.png',
-    // '../assets/Clefable.png',
-    // '../assets/Clefairy.png',
-    // '../assets/Cloyster.png',
-    // '../assets/Dewgong.png',
-    // '../assets/Diglett.png',
-    // '../assets/Dodrio.png',
-    // '../assets/Doduo.png',
-    // '../assets/Drowzee.png',
-    // '../assets/Dugtrio.png',
-    // '../assets/Ekans.png',
-    // '../assets/Farfetchd.png',
-    // '../assets/Fearow.png',
-    // '../assets/Gastly.png',
-    // '../assets/Gengar.png',
-    // '../assets/Geodude.png',
-    // '../assets/Gloom.png',
-    // '../assets/Golbat.png',
-    // '../assets/Golduck.png',
-    // '../assets/Golem.png',
-    // '../assets/Graveler.png',
-    // '../assets/Grimer.png',
-    // '../assets/Growlithe.png',
-    // '../assets/Haunter.png',
-    // '../assets/Hypno.png',
-    // '../assets/Ivysaur.png',
-    // '../assets/Jigglypuff.png',
-    // '../assets/Kadabra.png',
-    // '../assets/Kakuna.png',
-    // '../assets/Kingler.png',
-    // '../assets/Krabby.png',
-    // '../assets/Machamp.png',
-    // '../assets/Machoke.png',
-    // '../assets/Machop.png',
-    // '../assets/Magnemite.png',
-    // '../assets/Magneton.png',
-    // '../assets/Mankey.png',
-    // '../assets/Meowth.png',
-    // '../assets/Metapod.png',
-    // '../assets/Muk.png',
-    // '../assets/Nidoking.png',
-    // '../assets/Nidoqueen.png',
-    // '../assets/Nidoran.png',
-    // '../assets/NidoranFemea.png',
-    // '../assets/Nidorina.png',
-    // '../assets/Nidorino.png',
-    // '../assets/Ninetales.png',
-    // '../assets/Oddish.png',
-    // '../assets/Onix.png',
-    // '../assets/Paras.png',
-    // '../assets/Parasect.png',
-    // '../assets/Persian.png',
-    // '../assets/Pidgeot.png',
-    // '../assets/Pidgeotto.png',
-    // '../assets/Pidgey.png',
-    // '../assets/Pikachu.png',
-    // '../assets/Poliwag.png',
-    // '../assets/Poliwhirl.png',
-    // '../assets/Poliwrath.png',
-    // '../assets/Ponyta.png',
-    // '../assets/Primeape.png',
-    // '../assets/Psyduck.png',
-    // '../assets/Raichu.png',
-    // '../assets/Rapidash.png',
-    // '../assets/Raticate.png',
-    // '../assets/Rattata.png',
-    // '../assets/Sandshrew.png',
-    // '../assets/Sandslash.png',
-    // '../assets/Seel.png',
-    // '../assets/Shellder.png',
-    // '../assets/Slowbro.png',
-    // '../assets/Slowpoke.png',
-    // '../assets/Spearow.png',
-    // '../assets/Squirtle.png',
-    // '../assets/Tentacool.png',
-    // '../assets/Tentacruel.png',
-    // '../assets/Venomoth.png',
-    // '../assets/Venonat.png',
-    // '../assets/Venusaur.png',
-    // '../assets/Victreebel.png',
-    // '../assets/Vileplume.png',
-    // '../assets/Voltorb.png',
-    // '../assets/Vulpix.png',
-    // '../assets/Wartortle.png',
-    // '../assets/Weedle.png',
-    // '../assets/Weepinbell.png',
-    // '../assets/Wigglytuff.png',
-    // '../assets/Zubat.png',
+import Abra from '../assets/Abra.png';
+import Alakazam from '../assets/Alakazam.png';
+import Arbok from '../assets/Arbok.png';
+import Arcanine from '../assets/Arcanine.png';
+import Beedrill from '../assets/Beedrill.png';
+import Bellsprout from '../assets/Bellsprout.png';
+import Blastoise from '../assets/Blastoise.png';
+import Bulbasaur from '../assets/Bulbasaur.png';
+import Butterfree from '../assets/Butterfree.png';
+import Caterpie from '../assets/Caterpie.png';
+import Charizard from '../assets/Charizard.png';
+import Charmander from '../assets/Charmander.png';
+import Charmeleon from '../assets/Charmeleon.png';
+import Clefable from '../assets/Clefable.png';
+import Clefairy from '../assets/Clefairy.png';
+import Cloyster from '../assets/Cloyster.png';
+import Dewgong from '../assets/Dewgong.png';
+import Diglett from '../assets/Diglett.png';
+import Dodrio from '../assets/Dodrio.png';
+import Doduo from '../assets/Doduo.png';
+import Drowzee from '../assets/Drowzee.png';
+import Dugtrio from '../assets/Dugtrio.png';
+import Ekans from '../assets/Ekans.png';
+import Farfetchd from '../assets/Farfetchd.png';
+import Fearow from '../assets/Fearow.png';
+import Gastly from '../assets/Gastly.png';
+import Gengar from '../assets/Gengar.png';
+import Geodude from '../assets/Geodude.png';
+import Gloom from '../assets/Gloom.png';
+import Golbat from '../assets/Golbat.png';
+import Golduck from '../assets/Golduck.png';
+import Golem from '../assets/Golem.png';
+import Graveler from '../assets/Graveler.png';
+import Grimer from '../assets/Grimer.png';
+import Growlithe from '../assets/Growlithe.png';
+import Haunter from '../assets/Haunter.png';
+import Hypno from '../assets/Hypno.png';
+import Ivysaur from '../assets/Ivysaur.png';
+import Jigglypuff from '../assets/Jigglypuff.png';
+import Kadabra from '../assets/Kadabra.png';
+import Kakuna from '../assets/Kakuna.png';
+import Kingler from '../assets/Kingler.png';
+import Krabby from '../assets/Krabby.png';
+import Machamp from '../assets/Machamp.png';
+import Machoke from '../assets/Machoke.png';
+import Machop from '../assets/Machop.png';
+import Magnemite from '../assets/Magnemite.png';
+import Magneton from '../assets/Magneton.png';
+import Mankey from '../assets/Mankey.png';
+import Meowth from '../assets/Meowth.png';
+import Metapod from '../assets/Metapod.png';
+import Muk from '../assets/Muk.png';
+import Nidoking from '../assets/Nidoking.png';
+import Nidoqueen from '../assets/Nidoqueen.png';
+import Nidoran from '../assets/Nidoran.png';
+import NidoranFemea from '../assets/NidoranFemea.png';
+import Nidorina from '../assets/Nidorina.png';
+import Nidorino from '../assets/Nidorino.png';
+import Ninetales from '../assets/Ninetales.png';
+import Oddish from '../assets/Oddish.png';
+import Onix from '../assets/Onix.png';
+import Paras from '../assets/Paras.png';
+import Parasect from '../assets/Parasect.png';
+import Persian from '../assets/Persian.png';
+import Pidgeot from '../assets/Pidgeot.png';
+import Pidgeotto from '../assets/Pidgeotto.png';
+import Pidgey from '../assets/Pidgey.png';
+import Pikachu from '../assets/Pikachu.png';
+import Poliwag from '../assets/Poliwag.png';
+import Poliwhirl from '../assets/Poliwhirl.png';
+import Poliwrath from '../assets/Poliwrath.png';
+import Ponyta from '../assets/Ponyta.png';
+import Primeape from '../assets/Primeape.png';
+import Psyduck from '../assets/Psyduck.png';
+import Raichu from '../assets/Raichu.png';
+import Rapidash from '../assets/Rapidash.png';
+import Raticate from '../assets/Raticate.png';
+import Rattata from '../assets/Rattata.png';
+import Sandshrew from '../assets/Sandshrew.png';
+import Sandslash from '../assets/Sandslash.png';
+import Seel from '../assets/Seel.png';
+import Shellder from '../assets/Shellder.png';
+import Slowbro from '../assets/Slowbro.png';
+import Slowpoke from '../assets/Slowpoke.png';
+import Spearow from '../assets/Spearow.png';
+import Squirtle from '../assets/Squirtle.png';
+import Tentacool from '../assets/Tentacool.png';
+import Tentacruel from '../assets/Tentacruel.png';
+import Venomoth from '../assets/Venomoth.png';
+import Venonat from '../assets/Venonat.png';
+import Venusaur from '../assets/Venusaur.png';
+import Victreebel from '../assets/Victreebel.png';
+import Vileplume from '../assets/Vileplume.png';
+import Voltorb from '../assets/Voltorb.png';
+import Vulpix from '../assets/Vulpix.png';
+import Wartortle from '../assets/Wartortle.png';
+import Weedle from '../assets/Weedle.png';
+import Weepinbell from '../assets/Weepinbell.png';
+import Wigglytuff from '../assets/Wigglytuff.png';
+import Zubat from '../assets/Zubat.png';
+
+const pngPokemons = [
+    Abra,
+    Alakazam,
+    Arbok,
+    Arcanine,
+    Beedrill,
+    Bellsprout,
+    Blastoise,
+    Bulbasaur,
+    Butterfree,
+    Caterpie,
+    Charizard,
+    Charmander,
+    Charmeleon,
+    Clefable,
+    Clefairy,
+    Cloyster,
+    Dewgong,
+    Diglett,
+    Dodrio,
+    Doduo,
+    Drowzee,
+    Dugtrio,
+    Ekans,
+    Farfetchd,
+    Fearow,
+    Gastly,
+    Gengar,
+    Geodude,
+    Gloom,
+    Golbat,
+    Golduck,
+    Golem,
+    Graveler,
+    Grimer,
+    Growlithe,
+    Haunter,
+    Hypno,
+    Ivysaur,
+    Jigglypuff,
+    Kadabra,
+    Kakuna,
+    Kingler,
+    Krabby,
+    Machamp,
+    Machoke,
+    Machop,
+    Magnemite,
+    Magneton,
+    Mankey,
+    Meowth,
+    Metapod,
+    Muk,
+    Nidoking,
+    Nidoqueen,
+    Nidoran,
+    NidoranFemea,
+    Nidorina,
+    Nidorino,
+    Ninetales,
+    Oddish,
+    Onix,
+    Paras,
+    Parasect,
+    Persian,
+    Pidgeot,
+    Pidgeotto,
+    Pidgey,
+    Pikachu,
+    Poliwag,
+    Poliwhirl,
+    Poliwrath,
+    Ponyta,
+    Primeape,
+    Psyduck,
+    Raichu,
+    Rapidash,
+    Raticate,
+    Rattata,
+    Sandshrew,
+    Sandslash,
+    Seel,
+    Shellder,
+    Slowbro,
+    Slowpoke,
+    Spearow,
+    Squirtle,
+    Tentacool,
+    Tentacruel,
+    Venomoth,
+    Venonat,
+    Venusaur,
+    Victreebel,
+    Vileplume,
+    Voltorb,
+    Vulpix,
+    Wartortle,
+    Weedle,
+    Weepinbell,
+    Wigglytuff,
+    Zubat,
 ];
 
-export const uniqueCards = pokemons.map((
-    images,
+export const uniqueCards = pngPokemons.map((
+    png,
     idPair
 ) => ({
-    images,
+    png,
     idPair,
 }));
 
@@ -113,8 +214,8 @@ export const pairOfCards = [
     ...uniqueCards,
     ...uniqueCards
 ].map((card, id) => ({
-        ...card,
-        id
-    })
+    ...card,
+    id
+})
 
 );
