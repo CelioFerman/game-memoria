@@ -1,9 +1,9 @@
 import { Scoreboard } from "./Scoreboard"
 import { Cards } from "./Cards"
 import { pairOfCards } from "../js/Pokemons"
+import { Results } from "./Results";
 import '../css/GameOfMemory.css'
 import '../css/Cards.css'
-import { Results } from "./Results";
 
 export const GameOfMemory = () => {
     return (

@@ -1,4 +1,9 @@
-import { Scoreboard } from "./Scoreboard";
+import '../css/Results.css';
+import classNames from "classnames"
+
+const cn = classNames('results', {
+    'results-open': false
+});
 
 export const Results = ({ player1Points, player2Points }) => {
     const getWinner = () => {
@@ -12,7 +17,7 @@ export const Results = ({ player1Points, player2Points }) => {
     };
 
     return (
-        <div className="results">
+        <div className={cn}>
             <div className="results-content">
                 <h2>{getWinner()}</h2>
                 <button className="new-game" onClick={() => window.location.reload()}>
