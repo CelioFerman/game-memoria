@@ -29,7 +29,7 @@ export function GameOfMemoryContent() {
               <Cards key={card.id} {...card} />
             ))
           ) : (
-            <p>Carregando cartas...</p> // Isso garante que há feedback visual se as cartas não forem carregadas
+            <p>Loading...</p>
           )}
         </div>
       </div>

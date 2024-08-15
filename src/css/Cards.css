@@ -2,17 +2,19 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     width: 100%;
-    height: 100vh;
-    gap: 0.5rem;
+    height: 100%;
+    gap: 0.3rem;
     padding: 0.5rem;
     box-sizing: border-box;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 .Cards {
     width: 100%;
-    aspect-ratio: 3 / 4;
-    perspective: 400px;
-
+    padding: 0.5rem;
+    height: 100%;
+    gap: 0.5rem;
+    aspect-ratio: 1/1;
+    
     /* Reference Button */
     appearance: none;
     border: none;

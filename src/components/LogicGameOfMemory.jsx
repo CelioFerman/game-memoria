@@ -68,7 +68,7 @@ export const LogicGameOfMemoryProvider = ({ children }) => {
           setTimeout(() => {
             setIdCardsTurnedOver([]);
             switchPlayer();
-          }, 2000);
+          }, 1500);
         }
       }
     },
