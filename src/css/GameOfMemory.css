@@ -1,7 +1,28 @@
 .game-memory{
-    padding: 0.5rem;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
 }
 
+/* margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;  */
+
 .game-memory-content{
-    max-width: 37.5px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-column: auto;
+}
+
+h1{
+    block-size: 0.1rem;
+    text-align: center;
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }

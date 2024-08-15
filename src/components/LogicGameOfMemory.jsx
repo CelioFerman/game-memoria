@@ -1,5 +1,5 @@
 import { createContext, useState, useCallback, useEffect } from "react";
-import { pairOfCards } from '../components/Pokemons'; // Certifique-se de ajustar o caminho
+import { pairOfCards } from "../components/Pokemons";
 
 export const LogicGameOfMemoryContext = createContext();
 
@@ -8,24 +8,33 @@ export const LogicGameOfMemoryProvider = ({ children }) => {
   const [idsPairFound, setIdsPairFound] = useState([]);
   const [idCardsTurnedOver, setIdCardsTurnedOver] = useState([]);
   const [countCardsTurnedOver, setCountCardsTurnedOver] = useState(0);
-  const [countPoints, setCountPoints] = useState(0);
+  const [playerPoints, setPlayerPoints] = useState({ player1: 0, player2: 0 });
+  const [currentPlayer, setCurrentPlayer] = useState("player1");
 
-  // Embaralha as cartas
-  const shuffleCards = useCallback(() => {
-    const shuffledCards = [...pairOfCards].sort(() => Math.random() - 0.5);
-    setCards(shuffledCards);
-  }, []);
+  const shuffleCards = (cardsArray) => {
+    return cardsArray.sort(() => Math.random() - 0.5);
+  };
 
   useEffect(() => {
-    shuffleCards();
-  }, [shuffleCards]);
+    const shuffledCards = shuffleCards(pairOfCards); // Embaralhe as cartas na inicialização
+    setCards(shuffledCards); // Defina o estado das cartas embaralhadas
+  }, []);
 
   const increaseCardsTurnedOver = useCallback(() => {
     setCountCardsTurnedOver((prevCount) => prevCount + 1);
   }, []);
 
   const increasePoints = useCallback(() => {
-    setCountPoints((prevCount) => prevCount + 3);
+    setPlayerPoints((prevPoints) => ({
+      ...prevPoints,
+      [currentPlayer]: prevPoints[currentPlayer] + 3,
+    }));
+  }, [currentPlayer]);
+
+  const switchPlayer = useCallback(() => {
+    setCurrentPlayer((prevPlayer) =>
+      prevPlayer === "player1" ? "player2" : "player1"
+    );
   }, []);
 
   const compareCards = useCallback(
@@ -39,34 +48,38 @@ export const LogicGameOfMemoryProvider = ({ children }) => {
 
   const turnCards = useCallback(
     ({ id, idPair }) => {
-      increaseCardsTurnedOver();
-
-      if (idCardsTurnedOver.includes(id) || idCardsTurnedOver.length >= 2) {
+      if (idCardsTurnedOver.length >= 2 || idCardsTurnedOver.includes(id)) {
         return;
       }
 
-      const updatedIds = idCardsTurnedOver.length === 0 ? [id] : [idCardsTurnedOver[0], id];
+      const updatedIds = [...idCardsTurnedOver, id];
       setIdCardsTurnedOver(updatedIds);
+      increaseCardsTurnedOver();
 
       if (updatedIds.length === 2) {
-        const equalCards = compareCards(updatedIds);
-        if (equalCards) {
-          increasePoints();
+        const [id1, id2] = updatedIds;
+        const isMatch = compareCards([id1, id2]);
+
+        if (isMatch) {
           setIdsPairFound((prevIds) => [...prevIds, idPair]);
+          increasePoints();
+          setIdCardsTurnedOver([]);
         } else {
           setTimeout(() => {
             setIdCardsTurnedOver([]);
+            switchPlayer();
           }, 2000);
         }
       }
     },
-    [idCardsTurnedOver, compareCards, increaseCardsTurnedOver, increasePoints]
+    [idCardsTurnedOver, compareCards, increaseCardsTurnedOver, increasePoints, switchPlayer]
   );
 
   const values = {
     cards,
     countCardsTurnedOver,
-    countPoints,
+    playerPoints,
+    currentPlayer,
     turnCards,
     idCardsTurnedOver,
     idsPairFound,

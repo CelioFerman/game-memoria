@@ -17,16 +17,20 @@ function GameOfMemory() {
 
 export function GameOfMemoryContent() {
   const { cards } = useGameOfMemory();
-
+  
   return (
     <div className="game-memory">
       <div className="game-memory-content">
         <h1>Jogo da Memória</h1>
         <Scoreboard />
         <div className="game-memory-cards">
-          {cards.map((card) => (
-            <Cards key={card.id} {...card} />
-          ))}
+          {cards.length > 0 ? (
+            cards.map((card) => (
+              <Cards key={card.id} {...card} />
+            ))
+          ) : (
+            <p>Carregando cartas...</p> // Isso garante que há feedback visual se as cartas não forem carregadas
+          )}
         </div>
       </div>
       <Results />

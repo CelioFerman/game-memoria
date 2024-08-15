@@ -4,13 +4,16 @@ import { useGameOfMemory } from "../hooks/UseGameOfMemory";
 import '../css/Cards.css';
 
 export const Cards = ({ id, png, idPair }) => {
-  const { turnCards, idCardsTurnedOver } = useGameOfMemory();
+  const { turnCards, idCardsTurnedOver, idsPairFound } = useGameOfMemory();
 
   const controlClick = () => {
     turnCards({ id, idPair });
   };
 
-  const madePair = idCardsTurnedOver.includes(idPair);
+  // Verifica se o par foi encontrado com base nos pares encontrados
+  const madePair = idsPairFound.includes(idPair);
+
+  // Verifica se a carta está virada ou se o par foi encontrado
   const faceCards = madePair || idCardsTurnedOver.includes(id);
   const blockClick = faceCards;
 
