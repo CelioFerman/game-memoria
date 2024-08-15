@@ -3,7 +3,6 @@ import { Cards } from "./components/Cards";
 import { Results } from "./components/Results";
 import { LogicGameOfMemoryProvider } from "./components/LogicGameOfMemory";
 import { useGameOfMemory } from "./hooks/UseGameOfMemory";
-import { useEffect } from "react";
 
 import "./css/GameOfMemory.css";
 import "./css/Cards.css";
@@ -17,16 +16,12 @@ function GameOfMemory() {
 }
 
 export function GameOfMemoryContent() {
-  const { cards, playGame } = useGameOfMemory();
-  
-  useEffect(() => {
-    playGame();
-  }, []);
+  const { cards } = useGameOfMemory();
 
   return (
     <div className="game-memory">
       <div className="game-memory-content">
-        <h1>Jogo da Memoria</h1>
+        <h1>Jogo da Memória</h1>
         <Scoreboard />
         <div className="game-memory-cards">
           {cards.map((card) => (
