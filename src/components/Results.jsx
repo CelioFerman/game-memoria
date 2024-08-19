@@ -1,7 +1,16 @@
+import { useState, useEffect } from "react";
 import classNames from "classnames";
 import "../css/Results.css";
 
-export const Results = ({ player1Points, player2Points }) => {
+export const Results = ({ player1Points, player2Points, gameFinished }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (gameFinished) {
+      setIsOpen(true);
+    }
+  }, [gameFinished]);
+
   const getWinner = () => {
     if (player1Points > player2Points) {
       return "Jogador 1 Venceu!";
@@ -13,7 +22,7 @@ export const Results = ({ player1Points, player2Points }) => {
   };
 
   const cn = classNames("results", {
-    "results-open": false,
+    "results-open": isOpen,
   });
 
   return (

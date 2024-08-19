@@ -15,14 +15,9 @@ export const LogicGameOfMemoryProvider = ({ children }) => {
     return cardsArray.sort(() => Math.random() - 0.5);
   };
 
-  const getRandomCards = (cardsArray, count) => {
-    const shuffledCards = shuffleCards(cardsArray);
-    return shuffledCards.slice(0, count);
-  };
-  
   useEffect(() => {
-    const randomCards = getRandomCards(pairOfCards, 30);
-    setCards(randomCards);
+    const shuffledCards = shuffleCards(pairOfCards,);
+    setCards(shuffledCards);
   }, []);
 
   const increaseCardsTurnedOver = useCallback(() => {
