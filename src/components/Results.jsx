@@ -14,10 +14,9 @@ export const Results = ({ player1Points, player2Points, gameFinished }) => {
   const getWinner = () => {
     if (player1Points > player2Points) {
       return "Jogador 1 Venceu!";
-    } else if (player2Points > player1Points) {
+    }
+    if (player2Points > player1Points) {
       return "Jogador 2 Venceu!";
-    } else {
-      return "Empate!";
     }
   };
 
