@@ -29,10 +29,7 @@ export const Results = ({ player1Points, player2Points, gameFinished }) => {
     <div className={cn}>
       <div className="results-content">
         <h2>{getWinner()}</h2>
-        <button
-          className="new-game"
-          onClick={() => window.location.reload()}
-        >
+        <button className="new-game" onClick={() => window.location.reload()}>
           Nova Partida
         </button>
       </div>

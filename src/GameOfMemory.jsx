@@ -16,7 +16,8 @@ function GameOfMemory() {
 }
 
 export function GameOfMemoryContent() {
-  const { cards } = useGameOfMemory();
+  const { cards, playerPoints, finishedGame } = useGameOfMemory();
+  
   
   return (
     <div className="game-memory">
@@ -32,8 +33,12 @@ export function GameOfMemoryContent() {
             <p>Loading...</p>
           )}
         </div>
+        <Results 
+          player1Points={playerPoints.player1} 
+          player2Points={playerPoints.player2} 
+          gameFinished={finishedGame} 
+        />
       </div>
-      <Results />
     </div>
   );
 }

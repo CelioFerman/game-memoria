@@ -1,28 +1,29 @@
 .results {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
-    opacity: 0; 
-    visibility: hidden;
-
-}
-
-.results-content {
+    z-index: 10;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .results-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .results-content {
     padding: 1rem 2rem;
-    background-color: #333;
+    background-color: #fff;
     border-radius: 1rem;
     text-align: center;
-}
-
-.results-open {
-    opacity: 1;
-    visibility: visible;
-}
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
