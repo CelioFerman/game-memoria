@@ -1,32 +1,28 @@
-.game-memory-cards{
+.game-memory-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-auto-rows: minmax(10rem, 1fr); /* Garante que as linhas tenham a mesma altura que as colunas */
     width: 100%;
-    height: 100%;
-    gap: 0.3rem;
-    padding: 0.5rem;
     box-sizing: border-box;
-    /* overflow-y: hidden; */
 }
+
 .Cards {
     width: 100%;
-    padding: 0.5rem;
-    height: 100%;
-    gap: 0.5rem;
     aspect-ratio: 1/1;
-    
-    /* Reference Button */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;   
+    padding: 0.2rem;
+    cursor: pointer;
     appearance: none;
     border: none;
     background-color: transparent;
-    padding: 0;
-    cursor: pointer;
 }
 
 .Cards img {
     max-width: 100%;
     max-height: 100%;
-        
 }
 
 .card-content {
@@ -56,17 +52,18 @@
 
 .faceCards .card-content {
     transform: rotateY(180deg);
-
 }
 
 @media (max-width: 768px) {
     .game-memory-cards {
         grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        grid-auto-rows: minmax(8rem, 1fr); /* Ajuste proporcional para telas menores */
     }
 }
 
 @media (max-width: 480px) {
     .game-memory-cards {
         grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+        grid-auto-rows: minmax(6rem, 1fr); /* Ajuste proporcional para telas menores */
     }
 }

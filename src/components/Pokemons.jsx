@@ -2,15 +2,20 @@ import Abra from '../assets/Abra.png';
 import Alakazam from '../assets/Alakazam.png';
 import Arbok from '../assets/Arbok.png';
 import Arcanine from '../assets/Arcanine.png';
+import Beedrill from '../assets/Beedrill.png';
 import Bellsprout from '../assets/Bellsprout.png';
 import Blastoise from '../assets/Blastoise.png';
 import Bulbasaur from '../assets/Bulbasaur.png';
 import Butterfree from '../assets/Butterfree.png';
+import Caterpie from '../assets/Caterpie.png';
 import Charizard from '../assets/Charizard.png';
 import Charmander from '../assets/Charmander.png';
 import Charmeleon from '../assets/Charmeleon.png';
+import Clefable from '../assets/Clefable.png';
 import Clefairy from '../assets/Clefairy.png';
+import Cloyster from '../assets/Cloyster.png';
 import Dewgong from '../assets/Dewgong.png';
+import Diglett from '../assets/Diglett.png';
 import Farfetchd from '../assets/Farfetchd.png';
 import Fearow from '../assets/Fearow.png';
 import Gastly from '../assets/Gastly.png';
@@ -55,15 +60,20 @@ const pngPokemons = [
     Alakazam,
     Arbok,
     Arcanine,
+    Beedrill,
     Bellsprout,
     Blastoise,
     Bulbasaur,
     Butterfree,
+    Caterpie,
     Charizard,
     Charmander,
     Charmeleon,
+    Clefable,
     Clefairy,
+    Cloyster,
     Dewgong,
+    Diglett,
     Farfetchd,
     Fearow,
     Gastly,
