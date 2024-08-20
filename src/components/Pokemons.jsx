@@ -1,8 +1,8 @@
-import Abra from '../assets/Abra.png';
-import Alakazam from '../assets/Alakazam.png';
-import Arbok from '../assets/Arbok.png';
-import Arcanine from '../assets/Arcanine.png';
-import Beedrill from '../assets/Beedrill.png';
+// import Abra from '../assets/Abra.png';
+// import Alakazam from '../assets/Alakazam.png';
+// import Arbok from '../assets/Arbok.png';
+// import Arcanine from '../assets/Arcanine.png';
+// import Beedrill from '../assets/Beedrill.png';
 // import Bellsprout from '../assets/Bellsprout.png';
 // import Blastoise from '../assets/Blastoise.png';
 // import Bulbasaur from '../assets/Bulbasaur.png';
@@ -37,10 +37,10 @@ import Beedrill from '../assets/Beedrill.png';
 // import Ninetales from '../assets/Ninetales.png';
 // import Persian from '../assets/Persian.png';
 // import Pidgey from '../assets/Pidgey.png';
-// import Pikachu from '../assets/Pikachu.png';
+import Pikachu from '../assets/Pikachu.png';
 // import Ponyta from '../assets/Ponyta.png';
 // import Psyduck from '../assets/Psyduck.png';
-// import Raichu from '../assets/Raichu.png';
+import Raichu from '../assets/Raichu.png';
 // import Rapidash from '../assets/Rapidash.png';
 // import Rattata from '../assets/Rattata.png';
 // import Sandshrew from '../assets/Sandshrew.png';
@@ -56,11 +56,11 @@ import Beedrill from '../assets/Beedrill.png';
 // import Wigglytuff from '../assets/Wigglytuff.png';
 
 const pngPokemons = [
-    Abra,
-    Alakazam,
-    Arbok,
-    Arcanine,
-    Beedrill,
+    // Abra,
+    // Alakazam,
+    // Arbok,
+    // Arcanine,
+    // Beedrill,
     // Bellsprout,
     // Blastoise,
     // Bulbasaur,
@@ -95,10 +95,10 @@ const pngPokemons = [
     // Ninetales,
     // Persian,
     // Pidgey,
-    // Pikachu,
+    Pikachu,
     // Ponyta,
     // Psyduck,
-    // Raichu,
+    Raichu,
     // Rapidash,
     // Rattata,
     // Sandshrew,
